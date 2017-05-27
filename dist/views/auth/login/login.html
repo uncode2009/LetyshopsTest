@@ -1,0 +1,10 @@
+<div class="signIn">
+  <h2>Log-in</h2>
+  <form name="userForm" ng-submit="login()" novalidate>
+    <input ng-model="loginForm.email" name="email" type="email" placeholder="e-mail" required>
+    <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+    <input ng-model="loginForm.password" name="password" type="password" placeholder="password" required>
+    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">password is required.</p>
+    <button class="btn btn-outline-primary" type="submit" ng-disabled="userForm.$invalid">sign in</button>
+  </form>
+</div>

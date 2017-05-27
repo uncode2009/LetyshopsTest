@@ -1,0 +1,16 @@
+<div class="signUp">
+  <h2>Registration</h2>
+  <form name="userForm" ng-submit="signUp()" novalidate>
+
+    <input ng-model="regForm.email" name="email" type="email" placeholder="e-mail" required>
+    <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+    <input ng-model="regForm.password" name="password" type="password" placeholder="password" required>
+
+    <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">password is required.</p>
+    <input ng-model="regForm.passwordConf" name="passwordConf" type="password" placeholder="confirm password" match-password="regForm.password" required>
+
+    <p ng-show="userForm.passwordConf.$error.matchPassword && !userForm.passwordConf.$pristine" class="help-block">Confirm password didn't match</p>
+    <button class="btn btn-outline-primary" type="submit" ng-disabled="userForm.$invalid">sign up</button>
+    
+  </form>
+</div>

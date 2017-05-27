@@ -1,0 +1,21 @@
+<div class="shops clearfix">
+  <h2>SHOPS LIST</h2>
+  <table class="table table-striped table-bordered">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Title</th>
+        <th>Cover</th>
+        <th>Description</th>
+        <th>Shop link</th>
+      </tr>
+    </thead>
+    <tr dir-paginate="shop in shops | itemsPerPage:10">
+      <th>{{shop.title}}</th>
+      <th><img ng-src="{{shop.cover}}"></th>
+      <th>{{shop.description}}</th>
+      <th>{{shop.link}}</th>
+    </tr>
+  </table>
+  <dir-pagination-controls>
+  </dir-pagination-controls>
+</div>

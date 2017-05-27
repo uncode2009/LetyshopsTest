@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "description": "test task for Letyshops",
+  "main": "gulpfile.js",
+  "authors": [
+    "Bondar Vadim"
+  ],
+  "license": "ISC",
+  "homepage": "bn-dev.ru",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-local-storage": "^0.6.0",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.1",
+    "angular-bootstrap": "^2.5.0"
+  }
+}
