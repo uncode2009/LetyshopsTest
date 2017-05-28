@@ -1,20 +1,23 @@
 angular.module('shopsModule')
-	.factory('shopsService', ['$http', 'config', function($http, config) {
+	.factory('shopsService', shopsService);
+shopsService.$inject = ['$http', 'config'];
 
-		var publicMethod = {
-			getShops: function() {
+function shopsService($http, config) {
 
-				return $http.get(config.shops)
-					.then(function(response) {
-						console.log(response);
-						return response.data;
+	var publicMethod = {
+		getShops: function() {
 
-					})
-					.catch(function(err) {
-						console.log(err);
-					})
+			return $http.get(config.shops)
+				.then(function(response) {
+					console.log(response);
+					return response.data;
 
-			}
-		};
-		return publicMethod;
-	}]);
+				})
+				.catch(function(err) {
+					console.log(err);
+				})
+
+		}
+	};
+	return publicMethod;
+};

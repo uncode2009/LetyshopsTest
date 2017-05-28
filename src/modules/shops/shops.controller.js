@@ -1,8 +1,28 @@
 angular.module('shopsModule')
-	.controller('shopsController', ['$scope', 'shops', function($scope, shops) {
+	.controller('shopsController', shopsController);
+shopsController.$inject = ['$scope', 'shopsService','$rootScope'];
+
+function shopsController($scope, shopsService,$rootScope) {
 
 
-		$scope.shops = shops;
+
+	if (!$rootScope.loggedUser) {
+		location.href = "#/restricted";
+
+	} else {
+		shopsService.getShops()
+			.then(function(response) {
+				$scope.shops = response;
 
 
-	}])
+			})
+			.catch(function(err) {
+				console.log(err);
+			})
+
+	}
+
+}
+
+
+

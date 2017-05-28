@@ -66,6 +66,7 @@ gulp.task('js', function() {
       startFolder + '**/**/**/**/**.controller.js'
     ])
     .pipe(concat('app.js'))
+    .pipe(uglify())
     .pipe(gulp.dest(finishFolder + 'js/'))
     .pipe(connect.reload());
 

@@ -1,5 +1,7 @@
 angular.module('authModule')
-	.controller('authController', ['$scope', '$rootScope', 'localStorageService', function($scope, $rootScope, localStorageService) {
+	.controller('authController', authController);
+	authController.$inject = ['$scope', '$rootScope', 'localStorageService'];
+	function authController($scope, $rootScope, localStorageService) {
 
 		$scope.regForm = {
 
@@ -14,6 +16,9 @@ angular.module('authModule')
 			email: '',
 			password: ''
 		}
+
+		$scope.emailFormat = /^[a-z]+[a-z0-9._]+@[a-z]+\.[a-z.]{2,5}$/;
+		
 		$scope.signUp = function() {
 
 			localStorageService.set('registered', $scope.regForm);
@@ -46,4 +51,4 @@ angular.module('authModule')
 			localStorageService.remove('logged');
 		}
 
-	}])
+	}

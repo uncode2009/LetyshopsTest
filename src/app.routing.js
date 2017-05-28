@@ -17,23 +17,8 @@ angular.module('appModule')
             })
             .when("/shops", {
                 templateUrl: "./views/shops/shops.html",
-                controller: 'shopsController',
-                resolve: {
-                    shops: function(shopsService) {
-                        return shopsService.getShops();
-                        console.log($rootScope.loggedUser);
-
-                    },
-                    checkPermission: function($location, $rootScope) {
-
-                        if (!$rootScope.loggedUser) {
-                            $location.path("/restricted");
-
-                        }
-
-
-                    }
-                }
+                controller: 'shopsController'
+          
             })
             .when("/restricted", {
                 templateUrl: "./views/auth/restricted/restricted.html",

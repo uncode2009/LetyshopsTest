@@ -2,7 +2,7 @@
   <h2>Registration</h2>
   <form name="userForm" ng-submit="signUp()" novalidate>
 
-    <input ng-model="regForm.email" name="email" type="email" placeholder="e-mail" required>
+    <input ng-model="regForm.email" name="email" ng-pattern = "emailFormat" type="email" placeholder="e-mail" required>
     <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
     <input ng-model="regForm.password" name="password" type="password" placeholder="password" required>
 
